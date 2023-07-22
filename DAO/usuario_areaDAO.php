@@ -6,7 +6,7 @@ class usuario_areaDAO {
     
     
     function seleccionar(){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql = "select * from usuario_area";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -24,7 +24,7 @@ class usuario_areaDAO {
     }
     
     function seleccionar_idusuario_area(usuario_area $usuario_area){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql = "select * from usuario_area where idusuario_area= ?";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){

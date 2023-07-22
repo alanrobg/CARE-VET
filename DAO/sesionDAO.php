@@ -6,7 +6,7 @@ class sesionDAO {
     
     
     function crear(sesion $sesion){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql = "INSERT INTO sesion (key_ses,idusuario,fexpiracion_ses) values (?,?,DATE_ADD(now(),interval 1 hour))";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -20,7 +20,7 @@ class sesionDAO {
     }
     
     function seleccionar_key_ses(sesion $sesion){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql = "select * from sesion where key_ses= ? AND fexpiracion_ses > now()";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -39,7 +39,7 @@ class sesionDAO {
     }
     
     function seleccionar_idusuario(sesion $sesion){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql = "select * from sesion where idusuario= ? AND fexpiracion_ses > now()";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -58,7 +58,7 @@ class sesionDAO {
     }
     
     function eliminar(sesion $sesion){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql =" delete from sesion WHERE idsesion=?";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -71,7 +71,7 @@ class sesionDAO {
     }
     
     function eliminar_key_ses(sesion $sesion){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql =" delete from sesion WHERE key_ses=?";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){

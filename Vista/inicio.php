@@ -86,47 +86,52 @@ if(isset($_GET['data'])){
                 <img src="./recursos/iconos/ajuste.png" width="50px" height="50px">
             </button>
             <ul class="dropdown-menu  dropdown-menu-dark">
-                <li><a class="dropdown-item rounded-3 hover:bg-gray-300 nodeco" href="inicio.php?data=<?=$encoded_data?>">Inicio</a></li>
-                <li><a class="dropdown-item" href="">Registros</a></li>
+                <li><a class="dropdown-item rounded-3 hover:bg-gray-300 nodeco" href="./inicio.php?data=<?=$encoded_data?>">Inicio</a></li>
+                <li><a class="dropdown-item" href="./Dashboard/Atencion_lista.php?data=<?=$encoded_data?>">Atenciones</a></li>
+                <li><a class="dropdown-item" href="./Dashboard/Consulta_lista.php?data=<?=$encoded_data?>">Consultas Médicas</a></li>
                 <li><a class="dropdown-item" href="./Dashboard/Cliente_lista.php?data=<?=$encoded_data?>">Clientes</a></li>
                 <li><a class="dropdown-item" href="./Dashboard/Mascota_lista.php?data=<?=$encoded_data?>">Mascotas</a></li>
+                <li><a class="dropdown-item" href="./Dashboard/Servicios_lista.php?data=<?=$encoded_data?>">Servicios</a></li>
+                <li><a class="dropdown-item" href="./Dashboard/Tratamiento_lista.php?data=<?=$encoded_data?>">Tratamientos</a></li>
+                <li><a class="dropdown-item" href="./Dashboard/vacuna_lista.php?data=<?=$encoded_data?>">Vacunas</a></li>
                 <li><a class="dropdown-item" href="./Dashboard/Usuario_lista.php.php?data=<?=$encoded_data?>">Usuarios</a></li>
                 <li><a class="dropdown-item" href="./Dashboard/Raza_lista.php?data=<?=$encoded_data?>">Razas</a></li>
                 <li><a class="dropdown-item" href="./Dashboard/Especie_lista.php?data=<?=$encoded_data?>">Especies</a></li>
-                <li><a class="dropdown-item btn btn-danger" href="./Procesos/p_session.php?data=<?=$encoded_data?>&accion=delete">Salir</a></li>
+                <li><a class="dropdown-item" href="./Procesos/p_session.php?data=<?=$encoded_data?>&accion=delete"><b style="color: red">Salir</b></a></li>
             </ul>
         </div>   
-<div class="container">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="./inicio.php?data=<?=$encoded_data?>" class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-200 nodeco" id="fuente1">Inicio</a></li>
-            <li><a href="" class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300 nodeco" id="fuente1">Registros</a></li>
-            <li><a href="./Dashboard/Cliente_lista.php?data=<?=$encoded_data?>" class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300 nodeco" id="fuente1">Clientes</a></li>
-            <li><a href="./Dashboard/Mascota_lista.php?data=<?=$encoded_data?>" class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300 nodeco" id="fuente1">Mascotas</a></li>
-            <li><a href="./Dashboard/Usuario_lista.php?data=<?=$encoded_data?>" class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300 nodeco" id="fuente1">Usuarios</a></li>
-        </ul>
-        <div class="text-end dropdown flex items-center">
-            <div class="flex items-center w-full h-12 px-3 mt-2 rounded nodeco show-desktop">
-                <span class="ml-2 text-sm font-medium show-desktop" id="fuente1">Mantenimiento</span>
-            </div>
-            <button class="show-desktop dropdown-toggle" id="logo-header" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" 
-                    style="margin-top: 20px;margin-left: -30px" title="Mantenimiento">
-                <img src="./recursos/iconos/ajuste.png" width="70px" height="70px">
-            </button>
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="./inicio.php?data=<?=$encoded_data?>" class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-200 nodeco" id="fuente1">Inicio</a></li>
+                    <li><a href="./Dashboard/Atencion_lista.php?data=<?=$encoded_data?>" class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300 nodeco" id="fuente1">Atenciones</a></li>
+                    <li><a href="./Dashboard/Consulta_lista.php?data=<?=$encoded_data?>" class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300 nodeco" id="fuente1">Consultas</a></li>
+                    <li><a href="./Dashboard/Cliente_lista.php?data=<?=$encoded_data?>" class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300 nodeco" id="fuente1">Clientes</a></li>
+                    <li><a href="./Dashboard/Usuario_lista.php?data=<?=$encoded_data?>" class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300 nodeco" id="fuente1">Usuarios</a></li>
+                </ul>
+                <div class="text-end dropdown flex items-center">
+                    <button class="show-desktop dropdown-toggle" id="logo-header" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" 
+                            style="margin-top: 20px;margin-left: -30px">
+                        <img src="./recursos/iconos/ajuste.png" width="70px" height="70px">
+                    </button>
 
-            <ul class="dropdown-menu  dropdown-menu-dark">
-                <li><a class="dropdown-item rounded-3 hover:bg-gray-300 nodeco" href="inicio.php?data=<?=$encoded_data?>">Inicio</a></li>
-                <li><a class="dropdown-item" href="">Registros</a></li>
-                <li><a class="dropdown-item" href="./Dashboard/Cliente_lista.php?data=<?=$encoded_data?>">Clientes</a></li>
-                <li><a class="dropdown-item" href="./Dashboard/Mascota_lista.php?data=<?=$encoded_data?>">Mascotas</a></li>
-                <li><a class="dropdown-item" href="./Dashboard/Usuario_lista.php.php?data=<?=$encoded_data?>">Usuarios</a></li>
-                <li><a class="dropdown-item" href="./Dashboard/Raza_lista.php?data=<?=$encoded_data?>">Razas</a></li>
-                <li><a class="dropdown-item" href="./Dashboard/Especie_lista.php?data=<?=$encoded_data?>">Especies</a></li>
-                <li><a class="dropdown-item btn btn-danger" href="./Procesos/p_session.php?data=<?=$encoded_data?>&accion=delete">Salir</a></li>
-            </ul>
+                    <ul class="dropdown-menu  dropdown-menu-dark">
+                        <li><a class="dropdown-item rounded-3 hover:bg-gray-300 nodeco" href="./inicio.php?data=<?=$encoded_data?>">Inicio</a></li>
+                        <li><a class="dropdown-item" href="./Dashboard/Atencion_lista.php?data=<?=$encoded_data?>">Atenciones</a></li>
+                        <li><a class="dropdown-item" href="./Dashboard/Consulta_lista.php?data=<?=$encoded_data?>">Consultas Médicas</a></li>
+                        <li><a class="dropdown-item" href="./Dashboard/Cliente_lista.php?data=<?=$encoded_data?>">Clientes</a></li>
+                        <li><a class="dropdown-item" href="./Dashboard/Mascota_lista.php?data=<?=$encoded_data?>">Mascotas</a></li>
+                        <li><a class="dropdown-item" href="./Dashboard/Servicios_lista.php?data=<?=$encoded_data?>">Servicios</a></li>
+                        <li><a class="dropdown-item" href="./Dashboard/Tratamiento_lista.php?data=<?=$encoded_data?>">Tratamientos</a></li>
+                        <li><a class="dropdown-item" href="./Dashboard/Usuario_lista.php.php?data=<?=$encoded_data?>">Usuarios</a></li>
+                        <li><a class="dropdown-item" href="./Dashboard/vacuna_lista.php?data=<?=$encoded_data?>">Vacunas</a></li>
+                        <li><a class="dropdown-item" href="./Dashboard/Raza_lista.php?data=<?=$encoded_data?>">Razas</a></li>
+                        <li><a class="dropdown-item" href="./Dashboard/Especie_lista.php?data=<?=$encoded_data?>">Especies</a></li>
+                        <li><a class="dropdown-item" href="./Procesos/p_session.php?data=<?=$encoded_data?>&accion=delete"><b style="color: red">Salir</b></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
     </nav>
 </header>
 
@@ -143,63 +148,61 @@ if(isset($_GET['data'])){
             </div>
             
             <div class="row my-3">
-                
                 <div class="row my-3">
-                                <?php $area = $usuario_areaDAO->seleccionar_idusuario_area(new usuario_area($usuario->getIdearea(), null))->getNom_area(); ?>
+                    <?php $area = $usuario_areaDAO->seleccionar_idusuario_area(new usuario_area($usuario->getIdarea(), null))->getNom_area(); ?>
                     <div class="col-sm-12 col-md-12 col-lg-12">
-                            <table width="" cellpadding="10">
-                                <tr class="tabcell">
-                                    <td style="flex-basis: 40%"><label>Apellido:</label></td>
-                                    <td style="flex-basis: 65%">
-                                        <input size="25" readonly="" type="text" class="form-control" value="<?=$usuario->getApellido_usuario()?>">
-                                    </td>
-                                </tr>
-                                <tr class="tabcell">
-                                    <td style="flex-basis: 40%"><label>Nombre:</label></td>
-                                    <td style="flex-basis: 60%">
-                                        <input size="25" readonly="" type="text" class="form-control" value="<?=$usuario->getNombre_usuario()?>">
-                                    </td>
-                                </tr>
-                                <tr class="tabcell">
-                                    <td style="flex-basis: 40%"><label>DNI:</label></td>
-                                    <td style="flex-basis: 60%">
-                                        <input readonly="" type="text" class="form-control" value="<?=$usuario->getDni_usuario()?>">
-                                    </td>
-                                </tr>
-                                <tr class="tabcell">
-                                    <td style="flex-basis: 40%"><label>Area:</label></td>
-                                    <td style="flex-basis: 60%">
-                                        <input readonly="" type="text" class="form-control" value="<?=$area?>">
-                                    </td>
-                                </tr>
-                                <tr class="tabcell">
-                                    <td style="flex-basis: 40%"><label>Fecha de Nacimiento:</label></td>
-                                    <td style="flex-basis: 60%">
-                                        <input readonly="" type="text" class="form-control" value="<?=date("d/m/Y", strtotime($usuario->getNacimiento_usuario()))?>">
-                                    </td>
-                                </tr>
-                                <tr class="tabcell">
-                                    <td style="flex-basis: 40%"><label>Dirección:</label></td>
-                                    <td style="flex-basis: 60%">
-                                        <input readonly="" type="text" class="form-control" value="<?=$usuario->getDireccion_usuario()?>">
-                                    </td>
-                                </tr>
-                                <tr class="tabcell">
-                                    <td style="flex-basis: 40%"><label>Telefono:</label></td>
-                                    <td style="flex-basis: 60%">
-                                        <input readonly="" type="text" class="form-control" value="<?=$usuario->getTelefono_usuario()?>">
-                                    </td>
-                                </tr>
-                                <tr class="tabcell">
-                                    <td style="flex-basis: 40%"><label>Correo:</label></td>
-                                    <td style="flex-basis: 60%">
-                                        <input readonly="" type="text" class="form-control" value="<?=$usuario->getCorreo_usuario()?>">
-                                    </td>
-                                </tr>
-                            </table>
+                        <table width="" cellpadding="10">
+                            <tr class="tabcell">
+                                <td style="flex-basis: 40%"><label>Apellido:</label></td>
+                                <td style="flex-basis: 65%">
+                                    <input size="25" readonly="" type="text" class="form-control" value="<?=$usuario->getApellido_usuario()?>">
+                                </td>
+                            </tr>
+                            <tr class="tabcell">
+                                <td style="flex-basis: 40%"><label>Nombre:</label></td>
+                                <td style="flex-basis: 60%">
+                                    <input size="25" readonly="" type="text" class="form-control" value="<?=$usuario->getNombre_usuario()?>">
+                                </td>
+                            </tr>
+                            <tr class="tabcell">
+                                <td style="flex-basis: 40%"><label>DNI:</label></td>
+                                <td style="flex-basis: 60%">
+                                    <input readonly="" type="text" class="form-control" value="<?=$usuario->getDni_usuario()?>">
+                                </td>
+                            </tr>
+                            <tr class="tabcell">
+                                <td style="flex-basis: 40%"><label>Area:</label></td>
+                                <td style="flex-basis: 60%">
+                                    <input readonly="" type="text" class="form-control" value="<?=$area?>">
+                                </td>
+                            </tr>
+                            <tr class="tabcell">
+                                <td style="flex-basis: 40%"><label>Fecha de Nacimiento:</label></td>
+                                <td style="flex-basis: 60%">
+                                    <input readonly="" type="text" class="form-control" value="<?=date("d/m/Y", strtotime($usuario->getNacimiento_usuario()))?>">
+                                </td>
+                            </tr>
+                            <tr class="tabcell">
+                                <td style="flex-basis: 40%"><label>Dirección:</label></td>
+                                <td style="flex-basis: 60%">
+                                    <input readonly="" type="text" class="form-control" value="<?=$usuario->getDireccion_usuario()?>">
+                                </td>
+                            </tr>
+                            <tr class="tabcell">
+                                <td style="flex-basis: 40%"><label>Telefono:</label></td>
+                                <td style="flex-basis: 60%">
+                                    <input readonly="" type="text" class="form-control" value="<?=$usuario->getTelefono_usuario()?>">
+                                </td>
+                            </tr>
+                            <tr class="tabcell">
+                                <td style="flex-basis: 40%"><label>Correo:</label></td>
+                                <td style="flex-basis: 60%">
+                                    <input readonly="" type="text" class="form-control" value="<?=$usuario->getCorreo_usuario()?>">
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>

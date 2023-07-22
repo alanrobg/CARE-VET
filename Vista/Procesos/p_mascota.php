@@ -96,28 +96,7 @@ if($accion=="update"){
 
         
     }
-    /*
-    $fecha = date("h-i-s_d-m-Y");
     
-    $carpeta = "/xampp/htdocs/carevet_proy/Vista/Mascotas_Fotos/".$_POST['nombre']."-".$nomcli."_".$apecli."_".$dni."/";
-    if (!file_exists($carpeta)) {
-        mkdir($carpeta, 0777, true);
-    }
-    
-    $exten = strtolower(pathinfo($_FILES['fileToUpload']['name'],PATHINFO_EXTENSION));
-    $direc_archivo = $carpeta.$fecha.".".$exten;
-    if(move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $direc_archivo)){
-        echo "The file " . htmlspecialchars(basename($_FILES['fileToUpload']['name'])) . "has been uploaded.";
-    }else{
-        echo "Sorry there was an error uploading your file.";
-    }
-    
-    $mascota = new mascota($_REQUEST['idmascota'], $_POST['nombre'], $_POST['idcli'], $_POST['nacimiento'], $_POST['color'], null, $direc_archivo,$_POST['esterilizado'], $_POST['raza']);
-    $mascotaDAO->actualizar($mascota);
-     
-    echo "<script>window.location.href='../Dashboard/Mascota_lista.php?data=$encoded_data';</script>";
-    
-    */
 } 
 
 if($accion=="delete"){

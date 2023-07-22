@@ -14,8 +14,8 @@
 class mascotaDAO {
     //put your code here
     function seleccionar_idmascota(mascota $mascota){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
-        $sql = "select * from mascota where idmascota= ?";
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
+        $sql = "select * from mascota where idmascota = ?";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
             echo "Error statement";
@@ -34,7 +34,7 @@ class mascotaDAO {
     }
     
     function seleccionar(){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql = "select * from mascota";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -51,8 +51,27 @@ class mascotaDAO {
         return $vec;
     }
     
+    function seleccionarxCliente($idcliente){
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
+        $sql = "select * from mascota where idcliente = ?";
+        $stmt = mysqli_stmt_init($cn);
+        if(!mysqli_stmt_prepare($stmt, $sql)){
+            echo "Error statement";
+        }
+        mysqli_stmt_bind_param($stmt,"i",$idcliente);
+        mysqli_stmt_execute($stmt);
+        $resultData = mysqli_stmt_get_result($stmt);
+        $vec = [];
+        while($row = mysqli_fetch_assoc($resultData)){
+            $mascota = new mascota($row['idmascota'], $row['nom_mascota'], $row['idcliente'], $row['nacimiento_mascota'], $row['color_mascota'], $row['registro_mascota'],
+                    $row['foto_mascota'],$row['esterilizado'], $row['idraza']);
+            $vec[]= $mascota;
+        }
+        return $vec;
+    }
+    
     function crear(mascota $mascota){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql ="INSERT INTO mascota (nom_mascota, idcliente, nacimiento_mascota, color_mascota, registro_mascota, foto_mascota"
                 . ",esterilizado, idraza) VALUES (?,?,?,?,NOW(),?,?,?)";
         $stmt = mysqli_stmt_init($cn);
@@ -72,7 +91,7 @@ class mascotaDAO {
     }
     
     function actualizar(mascota $mascota){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql =" UPDATE mascota SET nom_mascota=?,idcliente=?,nacimiento_mascota=?,color_mascota=?,foto_mascota=?,esterilizado=? ,idraza = ? WHERE idmascota = ?";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -92,7 +111,7 @@ class mascotaDAO {
     }
     
     function eliminar(mascota $mascota){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql =" delete from mascota WHERE idmascota=?";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){

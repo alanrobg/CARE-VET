@@ -6,7 +6,7 @@ class usuarioDAO {
     
     
     function seleccionar_idusuario(usuario $usuario){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql = "select ape_usuario, nom_usuario, dni_usuario, direccion_usuario, nacimiento_usuario, telefono_usuario, correo_usuario, contrato_usuario, idarea, "
                 . "usu_usuario, pass_usuario from usuario where idusuario= ?";
         $stmt = mysqli_stmt_init($cn);
@@ -27,7 +27,7 @@ class usuarioDAO {
     }
     
     function seleccionar_usuario_usu_password_usu(usuario $usuario){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql = "select idusuario from usuario where usu_usuario=? AND pass_usuario=?";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -47,8 +47,44 @@ class usuarioDAO {
     }
     
     function seleccionar(){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
-        $sql = "select * from usuario";
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
+        $sql = "select * from usuario order by idusuario desc";
+        $stmt = mysqli_stmt_init($cn);
+        if(!mysqli_stmt_prepare($stmt, $sql)){
+            echo "Error statement";
+        }
+        mysqli_stmt_execute($stmt);
+        $resultData = mysqli_stmt_get_result($stmt);
+        $vec = [];
+        while($row = mysqli_fetch_assoc($resultData)){
+            $usuario = new usuario($row['idusuario'],$row['ape_usuario'], $row['nom_usuario'], $row['dni_usuario'], $row['direccion_usuario'], $row['nacimiento_usuario'],
+                    $row['telefono_usuario'], $row['correo_usuario'], $row['contrato_usuario'], $row['idarea'], $row['usu_usuario'], $row['pass_usuario']);
+            $vec[]= $usuario;
+        }
+        return $vec;
+    }
+    
+    function seleccionarxVeterinario(){
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
+        $sql = "select * from usuario where idarea = 2";
+        $stmt = mysqli_stmt_init($cn);
+        if(!mysqli_stmt_prepare($stmt, $sql)){
+            echo "Error statement";
+        }
+        mysqli_stmt_execute($stmt);
+        $resultData = mysqli_stmt_get_result($stmt);
+        $vec = [];
+        while($row = mysqli_fetch_assoc($resultData)){
+            $usuario = new usuario($row['idusuario'],$row['ape_usuario'], $row['nom_usuario'], $row['dni_usuario'], $row['direccion_usuario'], $row['nacimiento_usuario'],
+                    $row['telefono_usuario'], $row['correo_usuario'], $row['contrato_usuario'], $row['idarea'], $row['usu_usuario'], $row['pass_usuario']);
+            $vec[]= $usuario;
+        }
+        return $vec;
+    }
+    
+    function seleccionarxEmpleado(){
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
+        $sql = "select * from usuario where idarea = 4";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
             echo "Error statement";
@@ -65,7 +101,7 @@ class usuarioDAO {
     }
     
     function crear(usuario $user){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql ="INSERT INTO usuario (ape_usuario,nom_usuario,dni_usuario,direccion_usuario,nacimiento_usuario,telefono_usuario"
                 . ",correo_usuario,contrato_usuario,idarea,usu_usuario,pass_usuario) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = mysqli_stmt_init($cn);
@@ -81,7 +117,7 @@ class usuarioDAO {
         $telf_usu = $user->getTelefono_usuario();
         $email_usu = $user->getCorreo_usuario();
         $cont_usu = $user->getContrato_usuario();
-        $ida_usu = $user->getIdearea();
+        $ida_usu = $user->getIdarea();
         $usu_usu = $user->getUsu_usuario();
         $hashedpwd = hash('sha256', $user->getPass_usuario());
         mysqli_stmt_bind_param($stmt, "ssssssssiss",$ape_usu,$nom_usu,$dni_usu,$dir_usu,$nac_usu,$telf_usu,$email_usu,$cont_usu,$ida_usu,
@@ -91,7 +127,7 @@ class usuarioDAO {
     }
     
     function seleccionarxDNI($dni){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql ="select * from usuario where dni_usuario=? limit 1";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -110,7 +146,7 @@ class usuarioDAO {
     }
     
     function seleccionarxUSUARIO($dni){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql ="select * from usuario where usu_usuario=? limit 1";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -129,7 +165,7 @@ class usuarioDAO {
     }
     
     function actualizar(usuario $user){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql =" UPDATE usuario SET ape_usuario=?,nom_usuario=?,dni_usuario=?,direccion_usuario=?,nacimiento_usuario=?,telefono_usuario=?"
                 . ",correo_usuario=?,contrato_usuario=?,idarea=?,usu_usuario=?,pass_usuario=? WHERE idusuario=?";
         $stmt = mysqli_stmt_init($cn);
@@ -155,7 +191,7 @@ class usuarioDAO {
     }
     
     function seleccionarxDNIupdate($id,$dni){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql ="select * from usuario where idusuario != ? and dni_usuario=? limit 1";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -174,7 +210,7 @@ class usuarioDAO {
     }
     
     function seleccionarxUSUARIOupdate($id,$dni){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql ="select * from usuario where idusuario != ? and usu_usuario=? limit 1";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){

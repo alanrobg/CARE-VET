@@ -6,6 +6,7 @@ Proyecto CareVet Veterinaria
 
 
 <?php
+$privilegio = 3;
 
 //---------------------------------------------------------------
 include_once './session.php';
@@ -59,20 +60,25 @@ $especieDAO = new especieDAO();
     <title>CareVet Veterinaria</title>
 
 </head>
-
-<!-------------------------------------------------SCRIPT PARA USU_DUPLIADOS------------------------------------------------->
+<!-------------------------------------------------SCRIPT PARA BUSQUEDA------------------------------------------------->
 <script>
-    <?php
-    if(isset($_REQUEST['error'])){
-        if($_REQUEST['error'] == "dup"){
-            ?>
-            window.onload = function() {
-            alert("El DNI / Usuario ingresado se repite en otro Usuario");
-            }
-            <?php
-        }
-    }
-    ?>
+document.addEventListener("keyup", e=>{
+
+  if (e.target.matches("#buscador")){
+
+      if (e.key ==="Escape")e.target.value = ""
+
+      document.querySelectorAll(".articulo").forEach(fruta =>{
+
+          fruta.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+            ?fruta.classList.remove("filtro")
+            :fruta.classList.add("filtro")
+      })
+
+  }
+
+
+})
 </script>
 
 <body id="cuerpo">
@@ -99,10 +105,24 @@ $especieDAO = new especieDAO();
             </style>
             
                 <div class="row my-3">
+                    
                     <div class="col-sm-12 col-md-12 col-lg-12">
-                        <div style="display: flex; justify-content: flex-end">
-                            <button data-bs-toggle="modal" data-bs-target="#newMascota" class="btn btn-primary">Crear Mascota</button>
-                        </div>
+                    <table>
+                        <tr>
+                            <td align="right" style="padding-right: 5px">
+                                Busqueda:
+                            </td>
+                            <td>
+                                <input class="form-control" type="text" name="buscador" id="buscador" placeholder="Buscar...">
+                            </td>
+                            <td>&emsp;</td>
+                            <td>
+                                <button data-bs-toggle="modal" data-bs-target="#newMascota" class="btn btn-primary">Agregar Mascota</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
                         <table border="1" width="100%" class="ttable">
                             <thead>
                                 <tr>
@@ -111,7 +131,6 @@ $especieDAO = new especieDAO();
                                     <th>Cliente</th>
                                     <th>Raza</th>
                                     <th>Especie</th>
-                                    <th></th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -127,7 +146,6 @@ $especieDAO = new especieDAO();
                                     $apecli = $cliente->getApellido_cli();
                                     $raza = $razaDAO->seleccionar_idraza(new raza($dm->getIdraza(), null, null));
                                     $especie = $especieDAO->seleccionar_idespecie(new especie($raza->getIdespecie(), null));
-                                    
                                 ?>
                                 <tr class="articulo">
                                     <td><?=$id?></td>
@@ -137,8 +155,8 @@ $especieDAO = new especieDAO();
                                     <td><?=$especie->getNom_especie()?></td>
                                     <td><div style="display:flex; flex-direction: row; justify-content: space-around">
                                         <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#detailsmascota<?=$id?>">
-                                            Detalles</button>
-                                        <button class="btn btn-danger" type="button">Eliminar</button></div></td>
+                                            Detalles</button></div>
+                                    </td>
                                     <div class="modal fade" id="detailsmascota<?=$dm->getIdmascota()?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-title">
                                             <div class="modal-content">
@@ -178,11 +196,11 @@ $especieDAO = new especieDAO();
                                                     </div>
                                                     <div class="input-group mb-3">
                                                       <label style="flex-basis: 40%" class="input-group-text">Raza:</label>
-                                                      <input style="flex-basis: 60%" type="text" class="form-control" value="<?=$dm->getIdraza()?>" readonly="">
+                                                      <input style="flex-basis: 60%" type="text" class="form-control" value="<?=$raza->getNom_raza()?>" readonly="">
                                                     </div>
                                                     <div class="input-group mb-3">
                                                       <label style="flex-basis: 40%" class="input-group-text">Especie:</label>
-                                                      <input style="flex-basis: 60%" type="text" class="form-control" value="" readonly="">
+                                                      <input style="flex-basis: 60%" type="text" class="form-control" value="<?=$especie->getNom_especie()?>" readonly="">
                                                     </div>
                                                     <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

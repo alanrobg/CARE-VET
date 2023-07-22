@@ -5,7 +5,7 @@
         $apellido = $d->getApellido_usuario();
         $nom = $d->getNombre_usuario();
         $dni = $d->getDni_usuario();
-        $area = $d->getIdearea();
+        $area = $d->getIdarea();
         $direccion = $d->getDireccion_usuario();
         $nacimiento = date("d-m-Y", strtotime($d->getNacimiento_usuario()));
         $telefono = $d->getTelefono_usuario();

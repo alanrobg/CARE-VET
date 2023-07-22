@@ -13,11 +13,11 @@ class usuario {
     private $telefono_usuario;
     private $correo_usuario;
     private $contrato_usuario;
-    private $idearea;
+    private $idarea;
     private $usu_usuario;
     private $pass_usuario;
     
-    function __construct($idusuario, $apellido_usuario, $nombre_usuario, $dni_usuario, $direccion_usuario, $nacimiento_usuario, $telefono_usuario, $correo_usuario, $contrato_usuario, $idearea, $usu_usuario, $pass_usuario) {
+    public function __construct($idusuario, $apellido_usuario, $nombre_usuario, $dni_usuario, $direccion_usuario, $nacimiento_usuario, $telefono_usuario, $correo_usuario, $contrato_usuario, $idarea, $usu_usuario, $pass_usuario) {
         $this->idusuario = $idusuario;
         $this->apellido_usuario = $apellido_usuario;
         $this->nombre_usuario = $nombre_usuario;
@@ -27,105 +27,105 @@ class usuario {
         $this->telefono_usuario = $telefono_usuario;
         $this->correo_usuario = $correo_usuario;
         $this->contrato_usuario = $contrato_usuario;
-        $this->idearea = $idearea;
+        $this->idarea = $idarea;
         $this->usu_usuario = $usu_usuario;
         $this->pass_usuario = $pass_usuario;
     }
     
-    function getIdusuario() {
+    public function getIdusuario() {
         return $this->idusuario;
     }
 
-    function getApellido_usuario() {
+    public function getApellido_usuario() {
         return $this->apellido_usuario;
     }
 
-    function getNombre_usuario() {
+    public function getNombre_usuario() {
         return $this->nombre_usuario;
     }
 
-    function getDni_usuario() {
+    public function getDni_usuario() {
         return $this->dni_usuario;
     }
 
-    function getDireccion_usuario() {
+    public function getDireccion_usuario() {
         return $this->direccion_usuario;
     }
 
-    function getNacimiento_usuario() {
+    public function getNacimiento_usuario() {
         return $this->nacimiento_usuario;
     }
 
-    function getTelefono_usuario() {
+    public function getTelefono_usuario() {
         return $this->telefono_usuario;
     }
 
-    function getCorreo_usuario() {
+    public function getCorreo_usuario() {
         return $this->correo_usuario;
     }
 
-    function getContrato_usuario() {
+    public function getContrato_usuario() {
         return $this->contrato_usuario;
     }
 
-    function getIdearea() {
-        return $this->idearea;
+    public function getIdarea() {
+        return $this->idarea;
     }
 
-    function getUsu_usuario() {
+    public function getUsu_usuario() {
         return $this->usu_usuario;
     }
 
-    function getPass_usuario() {
+    public function getPass_usuario() {
         return $this->pass_usuario;
     }
 
-    function setIdusuario($idusuario) {
+    public function setIdusuario($idusuario) {
         $this->idusuario = $idusuario;
     }
 
-    function setApellido_usuario($apellido_usuario) {
+    public function setApellido_usuario($apellido_usuario) {
         $this->apellido_usuario = $apellido_usuario;
     }
 
-    function setNombre_usuario($nombre_usuario) {
+    public function setNombre_usuario($nombre_usuario) {
         $this->nombre_usuario = $nombre_usuario;
     }
 
-    function setDni_usuario($dni_usuario) {
+    public function setDni_usuario($dni_usuario) {
         $this->dni_usuario = $dni_usuario;
     }
 
-    function setDireccion_usuario($direccion_usuario) {
+    public function setDireccion_usuario($direccion_usuario) {
         $this->direccion_usuario = $direccion_usuario;
     }
 
-    function setNacimiento_usuario($nacimiento_usuario) {
+    public function setNacimiento_usuario($nacimiento_usuario) {
         $this->nacimiento_usuario = $nacimiento_usuario;
     }
 
-    function setTelefono_usuario($telefono_usuario) {
+    public function setTelefono_usuario($telefono_usuario) {
         $this->telefono_usuario = $telefono_usuario;
     }
 
-    function setCorreo_usuario($correo_usuario) {
+    public function setCorreo_usuario($correo_usuario) {
         $this->correo_usuario = $correo_usuario;
     }
 
-    function setContrato_usuario($contrato_usuario) {
+    public function setContrato_usuario($contrato_usuario) {
         $this->contrato_usuario = $contrato_usuario;
     }
 
-    function setIdearea($idearea) {
-        $this->idearea = $idearea;
+    public function setIdarea($idarea) {
+        $this->idarea = $idarea;
     }
 
-    function setUsu_usuario($usu_usuario) {
+    public function setUsu_usuario($usu_usuario) {
         $this->usu_usuario = $usu_usuario;
     }
 
-    function setPass_usuario($pass_usuario) {
+    public function setPass_usuario($pass_usuario) {
         $this->pass_usuario = $pass_usuario;
     }
-    
+
 }

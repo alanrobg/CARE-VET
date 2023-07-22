@@ -16,12 +16,10 @@ class especie {
     
     private $idespecie;
     private $nom_especie;
-
     
     function __construct($idespecie, $nom_especie) {
         $this->idespecie = $idespecie;
         $this->nom_especie = $nom_especie;
-
     }
 
     function getidespecie() {

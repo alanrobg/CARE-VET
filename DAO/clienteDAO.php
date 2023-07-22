@@ -6,7 +6,7 @@
 class clienteDAO {
     
     function seleccionar(){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql ="select * from cliente";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -24,7 +24,7 @@ class clienteDAO {
     }
     
     function seleccionarxDNI($dni){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql ="select * from cliente where dni_cli =? limit 1";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -43,7 +43,7 @@ class clienteDAO {
     }
     
     function seleccionarxDNIupdate($id, $dni){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql ="select * from cliente where idcliente != ? AND dni_cli =? limit 1";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -62,7 +62,7 @@ class clienteDAO {
     }
     
     function seleccionar_idcliente(cliente $cliente){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql =" select * from cliente where idcliente=?";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -82,7 +82,7 @@ class clienteDAO {
     }
     
     function crear(cliente $cliente){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql =" INSERT INTO cliente (apellido_cli, nombre_cli, dni_cli, nacimiento_cli, direccion_cli, telefono_cli, correo_cli,"
                 . "registro_cli, idusuario) VALUES (?,?,?,?,?,?,?,CURRENT_TIME,?)";
         $stmt = mysqli_stmt_init($cn);
@@ -103,7 +103,7 @@ class clienteDAO {
     }
     
     function actualizar(cliente $cliente){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql =" UPDATE cliente SET apellido_cli=?,nombre_cli=?,dni_cli=?,nacimiento_cli=?,direccion_cli=?,telefono_cli=?,correo_cli=? WHERE idcliente=?";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -123,7 +123,7 @@ class clienteDAO {
     }
     
     function eliminar(cliente $cliente){
-        $cn = mysqli_connect("localhost", "root", "123456", "bd_veterinaria", "3308");
+        $cn = mysqli_connect("localhost", "id19715028_admin", "Admin123$", "id19715028_bd_veterinaria");
         $sql =" delete from cliente WHERE idcliente=?";
         $stmt = mysqli_stmt_init($cn);
         if(!mysqli_stmt_prepare($stmt, $sql)){

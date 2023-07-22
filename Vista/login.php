@@ -8,7 +8,7 @@ Proyecto CareVet Veterinaria
 
 //---------------------------------------------------------------
 //Administra codigos de errores
-$error = "";
+$error = "Usuario no encontrado";
 
 //---------------------------------------------------------------
 ?>
@@ -23,31 +23,28 @@ $error = "";
 
 <body>
     
-    <img src="recursos/Login_1.jpg" class="imagen-fondo">
-        <div class="contenedor-login text-center shadow border p-3 mt-5 rounded">
-            
-            <div class="cabezera-login">
-                <img src="recursos/LOGIN2.png">
-                <h3 class="mb-4">Login</h3>
-            </div>
-            
+<img src="recursos/Login_1.jpg" class="imagen-fondo">
+    <div class="contenedor-login text-center shadow border p-3 mt-5 rounded">
+        <div class="cabezera-login">
+            <img src="recursos/LOGIN2.png">
+            <h3 class="mb-4">Login</h3>
+        </div>
         <form action="Procesos/p_usuario.php" method="post">
-          <div class="form-group">
-            <input type="text" class="form-control mb-4" id="Name" placeholder="Usuario" name="usuario_usu">
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control mb-4" id="Password" placeholder="Contraseña" name="password_usu">
-          </div>  
-
+            <div class="form-group">
+              <input type="text" class="form-control mb-4" id="Name" placeholder="Usuario" name="usuario_usu">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control mb-4" id="Password" placeholder="Contraseña" name="password_usu">
+            </div>
             <input type="submit" class="btn btn-primary" value="Ingresar">
         </form>
-        </div>
-        <?php
-        //
-        if(isset($_GET['error'])){
-           echo $error;
-        }
-        ?>
+    </div>
+    <?php
+    //
+    if(isset($_GET['error'])){
+       echo $error;
+    }
+    ?>
     
     
 </body>
