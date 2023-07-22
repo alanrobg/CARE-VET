@@ -94,7 +94,7 @@ if(isset($_GET['data'])){
                 <li><a class="dropdown-item" href="./Dashboard/Servicios_lista.php?data=<?=$encoded_data?>">Servicios</a></li>
                 <li><a class="dropdown-item" href="./Dashboard/Tratamiento_lista.php?data=<?=$encoded_data?>">Tratamientos</a></li>
                 <li><a class="dropdown-item" href="./Dashboard/vacuna_lista.php?data=<?=$encoded_data?>">Vacunas</a></li>
-                <li><a class="dropdown-item" href="./Dashboard/Usuario_lista.php.php?data=<?=$encoded_data?>">Usuarios</a></li>
+                <li><a class="dropdown-item" href="./Dashboard/Usuario_lista.php?data=<?=$encoded_data?>">Usuarios</a></li>
                 <li><a class="dropdown-item" href="./Dashboard/Raza_lista.php?data=<?=$encoded_data?>">Razas</a></li>
                 <li><a class="dropdown-item" href="./Dashboard/Especie_lista.php?data=<?=$encoded_data?>">Especies</a></li>
                 <li><a class="dropdown-item" href="./Procesos/p_session.php?data=<?=$encoded_data?>&accion=delete"><b style="color: red">Salir</b></a></li>
@@ -123,7 +123,7 @@ if(isset($_GET['data'])){
                         <li><a class="dropdown-item" href="./Dashboard/Mascota_lista.php?data=<?=$encoded_data?>">Mascotas</a></li>
                         <li><a class="dropdown-item" href="./Dashboard/Servicios_lista.php?data=<?=$encoded_data?>">Servicios</a></li>
                         <li><a class="dropdown-item" href="./Dashboard/Tratamiento_lista.php?data=<?=$encoded_data?>">Tratamientos</a></li>
-                        <li><a class="dropdown-item" href="./Dashboard/Usuario_lista.php.php?data=<?=$encoded_data?>">Usuarios</a></li>
+                        <li><a class="dropdown-item" href="./Dashboard/Usuario_lista.php?data=<?=$encoded_data?>">Usuarios</a></li>
                         <li><a class="dropdown-item" href="./Dashboard/vacuna_lista.php?data=<?=$encoded_data?>">Vacunas</a></li>
                         <li><a class="dropdown-item" href="./Dashboard/Raza_lista.php?data=<?=$encoded_data?>">Razas</a></li>
                         <li><a class="dropdown-item" href="./Dashboard/Especie_lista.php?data=<?=$encoded_data?>">Especies</a></li>

@@ -104,12 +104,10 @@ document.addEventListener("keyup", e=>{
                                     $id = $dser->getIdservicio();
                                     $service = $dser->getNom_servicio();
                                     if($dser->getEstado() == 1){
-                                        $estado = "Disponible";
-                                        $status = "Habilitar"; $class = "primary";
+                                        $estado = "Disponible"; $class = "primary";
                                     }else{
-                                        $estado = "No Disponible";
-                                        $status = "Deshabilitar"; $class = "danger";
-                                    } 
+                                        $estado = "No Disponible"; $class = "danger";
+                                    }
                                 ?>
                                 <tr class="articulo">
                                     <td><?=$id?></td>
@@ -120,13 +118,13 @@ document.addEventListener("keyup", e=>{
                                     ?>
                                         <td><button class="btn btn-primary" data-bs-target="#update<?=$id?>" data-bs-toggle="modal">Editar</button></td>
                                         <td><a href="../Procesos/p_servicio.php?data=<?=$encoded_data?>&idservicio=<?=$id?>&accion=down" 
-                                               class="btn btn-danger" style="width: 110px">Deshabilitar</a></td>
+                                               class="btn btn-danger" style="width: 110px" <?=$status?> >Deshabilitar</a></td>
                                     <?php
                                     }else{
                                     ?>  
                                         <td><button class="btn btn-primary" disabled="">Editar</button></td>
                                         <td><a href="../Procesos/p_servicio.php?data=<?=$encoded_data?>&idservicio=<?=$id?>&accion=up" 
-                                               class="btn btn-primary" style="width: 110px">Habilitar</a></td>
+                                               class="btn btn-primary" style="width: 110px" <?=$status?> >Habilitar</a></td>
                                     <?php
                                     }
                                     ?>

@@ -110,7 +110,7 @@ document.addEventListener("keyup", e=>{
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-12">
 
-                    <table border="1" width="30%" class="table">
+                    <table border="1" width="80%" class="ttable">
                         <thead>
                             <tr>
                                 <th>ID Vacuna</th>

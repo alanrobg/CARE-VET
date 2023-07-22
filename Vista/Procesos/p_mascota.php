@@ -39,7 +39,8 @@ if($accion=="create"){
     
     $fecha = date("h-i-s_d-m-Y");
     
-    $carpeta = "/xampp/htdocs/carevet_proy/Vista/Mascotas_Fotos/".$_POST['nombre']."-".$nomcli."_".$apecli."_".$dni."/";
+    //$carpeta = "/xampp/htdocs/carevet_proy/Vista/Mascotas_Fotos/".$_POST['nombre']."-".$nomcli."_".$apecli."_".$dni."/";
+    $carpeta = "/public_html/Vista/Mascotas_Fotos/".$_POST['nombre']."-".$nomcli."_".$apecli."_".$dni."/";
     if (!file_exists($carpeta)) {
         mkdir($carpeta, 0777, true);
     }
@@ -67,7 +68,8 @@ if($accion=="update"){
         
         $fecha = date("h-i-s_d-m-Y");
 
-        $carpeta = "/xampp/htdocs/carevet_proy/Vista/Mascotas_Fotos/".$_POST['nombre']."-".$nomcli."_".$apecli."_".$dni."/";
+        //$carpeta = "/xampp/htdocs/carevet_proy/Vista/Mascotas_Fotos/".$_POST['nombre']."-".$nomcli."_".$apecli."_".$dni."/";
+        $carpeta = "/public_html/Vista/Mascotas_Fotos/".$_POST['nombre']."-".$nomcli."_".$apecli."_".$dni."/";
         if (!file_exists($carpeta)) {
             mkdir($carpeta, 0777, true);
         }

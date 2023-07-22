@@ -71,7 +71,7 @@ document.addEventListener("keyup", e=>{
         <div class="container py-4">
             <div class="row my-3">
                 <div class="col-sm-12 col-md-12 col-lg-12">
-                    <h1 class="display-6 fw-bold text-black izquierdo">Usuario Registrados <?=$acceso?></h1>
+                    <h1 class="display-6 fw-bold text-black izquierdo">Usuario Registrados</h1>
                 </div>
             </div>
             <?php 
